@@ -20,20 +20,11 @@
   <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'./',
-              VERSION:'0.9.0',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -176,10 +167,10 @@
             
   <div class="section" id="console-script-setup">
 <span id="id1"></span><h1>Console Script Setup<a class="headerlink" href="#console-script-setup" title="Permalink to this headline">¶</a></h1>
-<p>Optionally, your package can include a console script</p>
+<p>Optionally, your package can include a console script using Click or argparse (Python 3.2+).</p>
 <div class="section" id="how-it-works">
 <h2>How It Works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
-<p>If the ‘command_line_interface’ option is set to [‘click’] during setup, cookiecutter will
+<p>If the ‘command_line_interface’ option is set to [‘click’] or [‘argparse’] during setup, cookiecutter will
 add a file ‘cli.py’ in the project_slug subdirectory. An entry point is added to
 setup.py that points to the main function in cli.py.</p>
 </div>
@@ -191,19 +182,15 @@ setup.py that points to the main function in cli.py.</p>
 </div>
 <p>‘projectdir’ should be the top level project directory with the setup.py file</p>
 <p>The script will be generated with output for no arguments and –help.</p>
-<table class="docutils option-list" frame="void" rules="none">
-<col class="option" />
-<col class="description" />
-<tbody valign="top">
-<tr><td class="option-group">
-<kbd><span class="option">--help</span></kbd></td>
-<td>show help menu and exit</td></tr>
-</tbody>
-</table>
+<dl class="option-list">
+<dt><kbd><span class="option">--help</span></kbd></dt>
+<dd><p>show help menu and exit</p>
+</dd>
+</dl>
 </div>
 <div class="section" id="known-issues">
 <h2>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h2>
-<p>Installing the project in a development environment using:</p>
+<p>Using Click, installing the project in a development environment using:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python setup.py develop
 </pre></div>
 </div>

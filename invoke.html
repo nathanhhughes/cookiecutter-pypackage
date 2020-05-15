@@ -20,20 +20,11 @@
   <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'./',
-              VERSION:'0.9.0',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -173,80 +164,7 @@
 <h1>Invoke<a class="headerlink" href="#invoke" title="Permalink to this headline">¶</a></h1>
 <p>The generated project is ready to run some useful tasks like formatting, linting, testing.</p>
 <p>To do this we use <a class="reference external" href="http://www.pyinvoke.org/">pyinvoke</a> to wrap up the required commands.</p>
-<span class="target" id="module-tasks"></span><p>Tasks for maintaining the project.</p>
-<p>Execute ‘invoke –list’ for guidance on using Invoke</p>
-<dl class="function">
-<dt id="tasks.clean">
-<code class="descclassname">tasks.</code><code class="descname">clean</code><span class="sig-paren">(</span><em>c</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks.html#clean"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tasks.clean" title="Permalink to this definition">¶</a></dt>
-<dd><p>Runs all clean sub-tasks</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="tasks.clean_build">
-<code class="descclassname">tasks.</code><code class="descname">clean_build</code><span class="sig-paren">(</span><em>c</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks.html#clean_build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tasks.clean_build" title="Permalink to this definition">¶</a></dt>
-<dd><p>Clean up files from package building</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="tasks.clean_docs">
-<code class="descclassname">tasks.</code><code class="descname">clean_docs</code><span class="sig-paren">(</span><em>c</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks.html#clean_docs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tasks.clean_docs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Clean up files from documentation builds</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="tasks.clean_python">
-<code class="descclassname">tasks.</code><code class="descname">clean_python</code><span class="sig-paren">(</span><em>c</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks.html#clean_python"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tasks.clean_python" title="Permalink to this definition">¶</a></dt>
-<dd><p>Clean up python file artifacts</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="tasks.clean_tests">
-<code class="descclassname">tasks.</code><code class="descname">clean_tests</code><span class="sig-paren">(</span><em>c</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks.html#clean_tests"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tasks.clean_tests" title="Permalink to this definition">¶</a></dt>
-<dd><p>Clean up files from testing</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="tasks.coverage">
-<code class="descclassname">tasks.</code><code class="descname">coverage</code><span class="sig-paren">(</span><em>c</em>, <em>publish=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks.html#coverage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tasks.coverage" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create coverage report</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="tasks.dist">
-<code class="descclassname">tasks.</code><code class="descname">dist</code><span class="sig-paren">(</span><em>c</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks.html#dist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tasks.dist" title="Permalink to this definition">¶</a></dt>
-<dd><p>Build source and wheel packages</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="tasks.docs">
-<code class="descclassname">tasks.</code><code class="descname">docs</code><span class="sig-paren">(</span><em>c</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks.html#docs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tasks.docs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate documentation</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="tasks.format">
-<code class="descclassname">tasks.</code><code class="descname">format</code><span class="sig-paren">(</span><em>c</em>, <em>check=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks.html#format"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tasks.format" title="Permalink to this definition">¶</a></dt>
-<dd><p>Format code</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="tasks.lint">
-<code class="descclassname">tasks.</code><code class="descname">lint</code><span class="sig-paren">(</span><em>c</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks.html#lint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tasks.lint" title="Permalink to this definition">¶</a></dt>
-<dd><p>Lint code</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="tasks.release">
-<code class="descclassname">tasks.</code><code class="descname">release</code><span class="sig-paren">(</span><em>c</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks.html#release"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tasks.release" title="Permalink to this definition">¶</a></dt>
-<dd><p>Make a release of the python package to pypi</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="tasks.test">
-<code class="descclassname">tasks.</code><code class="descname">test</code><span class="sig-paren">(</span><em>c</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tasks.html#test"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tasks.test" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run tests</p>
-</dd></dl>
-
+<p>Execute <cite>invoke –list</cite> to see the list of available commands.</p>
 </div>
 
 

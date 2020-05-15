@@ -20,20 +20,11 @@
   <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'./',
-              VERSION:'0.9.0',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -101,7 +92,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#step-3-create-a-github-repo">Step 3: Create a GitHub Repo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#step-4-install-dev-requirements">Step 4: Install Dev Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#step-5-set-up-travis-ci">Step 5: Set Up Travis CI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#step-6-set-up-readthedocs">Step 6: Set Up ReadTheDocs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-6-set-up-read-the-docs">Step 6: Set Up Read the Docs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#step-7-set-up-pyup-io">Step 7: Set Up pyup.io</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#step-8-release-on-pypi">Step 8: Release on PyPI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#having-problems">Having problems?</a></li>
@@ -183,8 +174,8 @@
   <div class="section" id="tutorial">
 <h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Did you find any of these instructions confusing? <a class="reference external" href="https://github.com/audreyr/cookiecutter-pypackage/blob/master/docs/tutorial.rst">Edit this file</a>
+<p class="admonition-title">Note</p>
+<p>Did you find any of these instructions confusing? <a class="reference external" href="https://github.com/audreyr/cookiecutter-pypackage/blob/master/docs/tutorial.rst">Edit this file</a>
 and submit a pull request with your improvements!</p>
 </div>
 <p>To start with, you will need a <a class="reference external" href="https://github.com/">GitHub account</a> and an account on <a class="reference external" href="https://pypi.python.org/pypi">PyPI</a>. Create these before you get started on this tutorial. If you are new to Git and GitHub, you should probably spend a few minutes on some of the tutorials at the top of the page at <a class="reference external" href="https://help.github.com/">GitHub Help</a>.</p>
@@ -234,7 +225,7 @@ git push -u origin master
 </div>
 <div class="section" id="step-5-set-up-travis-ci">
 <h2>Step 5: Set Up Travis CI<a class="headerlink" href="#step-5-set-up-travis-ci" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://travis-ci.org/">Travis CI org</a> <a class="footnote-reference" href="#id2" id="id1">[*]</a> is a continuous integration tool used to prevent integration problems. Every commit to the master branch will trigger automated builds of the application.</p>
+<p><a class="reference external" href="https://travis-ci.org/">Travis CI org</a> <a class="footnote-reference brackets" href="#id2" id="id1">*</a> is a continuous integration tool used to prevent integration problems. Every commit to the master branch will trigger automated builds of the application.</p>
 <p>Login using your Github credentials. It may take a few minutes for Travis CI to load up a list of all your GitHub repos. They will be listed with boxes to the left of the repo name, where the boxes have an <code class="docutils literal notranslate"><span class="pre">X</span></code> in them, meaning it is not connected to Travis CI.</p>
 <p>Add the public repo to your Travis CI account by clicking the <code class="docutils literal notranslate"><span class="pre">X</span></code> to switch it “on” in the box next to the <code class="docutils literal notranslate"><span class="pre">mypackage</span></code> repo. Do not try to follow the other instructions, that will be taken care of next.</p>
 <p>In your terminal, your virtualenv should still be activated. If it isn’t, activate it now. Run the Travis CLI tool to do your Travis CI setup:</p>
@@ -243,23 +234,21 @@ git push -u origin master
 </div>
 <p>This will:</p>
 <ul class="simple">
-<li>Encrypt your PyPI password in your Travis config.</li>
-<li>Activate automated deployment on PyPI when you push a new tag to master branch.</li>
+<li><p>Encrypt your PyPI password in your Travis config.</p></li>
+<li><p>Activate automated deployment on PyPI when you push a new tag to master branch.</p></li>
 </ul>
 <p>See <a class="reference internal" href="travis_pypi_setup.html#travis-pypi-setup"><span class="std std-ref">Travis/PyPI Setup</span></a> for more information.</p>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[*]</a></td><td>For private projects go to <a class="reference external" href="https://travis-ci.com/">Travis CI com</a></td></tr>
-</tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">*</a></span></dt>
+<dd><p>For private projects go to <a class="reference external" href="https://travis-ci.com/">Travis CI com</a></p>
+</dd>
+</dl>
 </div>
-<div class="section" id="step-6-set-up-readthedocs">
-<h2>Step 6: Set Up ReadTheDocs<a class="headerlink" href="#step-6-set-up-readthedocs" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://readthedocs.org/">ReadTheDocs</a> hosts documentation for the open source community. Think of it as Continuous Documentation.</p>
-<p>Log into your account at <a class="reference external" href="https://readthedocs.org/">ReadTheDocs</a> . If you don’t have one, create one and log into it.</p>
+<div class="section" id="step-6-set-up-read-the-docs">
+<h2>Step 6: Set Up Read the Docs<a class="headerlink" href="#step-6-set-up-read-the-docs" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://readthedocs.org/">Read the Docs</a> hosts documentation for the open source community. Think of it as Continuous Documentation.</p>
+<p>Log into your account at <a class="reference external" href="https://readthedocs.org/">Read the Docs</a> . If you don’t have one, create one and log into it.</p>
 <p>If you are not at your dashboard, choose the pull-down next to your username in the upper right, and select “My Projects”. Choose the button to Import the repository and follow the directions.</p>
-<p>In your GitHub repo, select Settings &gt; Webhooks &amp; Services, turn on the ReadTheDocs service hook.</p>
 <p>Now your documentation will get rebuilt when you make documentation changes to your package.</p>
 </div>
 <div class="section" id="step-7-set-up-pyup-io">
