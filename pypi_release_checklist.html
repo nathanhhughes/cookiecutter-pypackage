@@ -88,7 +88,6 @@
 <li class="toctree-l1"><a class="reference internal" href="readme.html">Cookiecutter PyPackage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">PyPI Release Checklist</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#before-your-first-release">Before Your First Release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#for-every-release">For Every Release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#about-this-checklist">About This Checklist</a></li>
 </ul>
@@ -167,19 +166,6 @@
             
   <div class="section" id="pypi-release-checklist">
 <h1>PyPI Release Checklist<a class="headerlink" href="#pypi-release-checklist" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="before-your-first-release">
-<h2>Before Your First Release<a class="headerlink" href="#before-your-first-release" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p>Register the package on PyPI:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python setup.py register
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>Visit PyPI to make sure it registered.</p></li>
-</ol>
-</div>
 <div class="section" id="for-every-release">
 <h2>For Every Release<a class="headerlink" href="#for-every-release" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
@@ -195,13 +181,6 @@ git commit -m <span class="s2">&quot;Changelog for upcoming release 0.1.1.&quot;
 <li><p>Update version number (can also be patch or major)</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bump2version minor
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>Install the package again for local development, but with the new version number:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python setup.py develop
 </pre></div>
 </div>
 </div></blockquote>

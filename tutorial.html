@@ -185,10 +185,7 @@ and submit a pull request with your improvements!</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install cookiecutter
 </pre></div>
 </div>
-<p>We’ll also need pipenv so install that too:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install pipenv
-</pre></div>
-</div>
+<p>We’ll also need poetry so [install that too](<a class="reference external" href="https://python-poetry.org/docs/#installation">https://python-poetry.org/docs/#installation</a>):</p>
 </div>
 <div class="section" id="step-2-generate-your-package">
 <h2>Step 2: Generate Your Package<a class="headerlink" href="#step-2-generate-your-package" title="Permalink to this headline">¶</a></h2>
@@ -217,9 +214,9 @@ git push -u origin master
 </div>
 <div class="section" id="step-4-install-dev-requirements">
 <h2>Step 4: Install Dev Requirements<a class="headerlink" href="#step-4-install-dev-requirements" title="Permalink to this headline">¶</a></h2>
-<p>You should still be in the folder containing the <code class="docutils literal notranslate"><span class="pre">Pipfile</span></code> file.</p>
+<p>You should still be in the folder containing the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file.</p>
 <p>Install the new project’s local development requirements inside a virtual environment using pipenv:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pipenv install --dev
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry install
 </pre></div>
 </div>
 </div>
