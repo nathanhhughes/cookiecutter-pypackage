@@ -97,7 +97,6 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Console Script Setup</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#how-it-works">How It Works</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#known-issues">Known Issues</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#more-details">More Details</a></li>
 </ul>
 </li>
@@ -172,7 +171,7 @@
 <h2>How It Works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
 <p>If the ‘command_line_interface’ option is set to [‘click’] or [‘argparse’] during setup, cookiecutter will
 add a file ‘cli.py’ in the project_slug subdirectory. An entry point is added to
-setup.py that points to the main function in cli.py.</p>
+pyproject.toml that points to the main function in cli.py.</p>
 </div>
 <div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
@@ -180,27 +179,13 @@ setup.py that points to the main function in cli.py.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -e projectdir
 </pre></div>
 </div>
-<p>‘projectdir’ should be the top level project directory with the setup.py file</p>
+<p>‘projectdir’ should be the top level project directory with the pyproject.toml file</p>
 <p>The script will be generated with output for no arguments and –help.</p>
 <dl class="option-list">
 <dt><kbd><span class="option">--help</span></kbd></dt>
 <dd><p>show help menu and exit</p>
 </dd>
 </dl>
-</div>
-<div class="section" id="known-issues">
-<h2>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h2>
-<p>Using Click, installing the project in a development environment using:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python setup.py develop
-</pre></div>
-</div>
-<p>will not set up the entry point correctly. This is a known issue with Click.
-The following will work as expected:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python setup.py install
-pip install mypackage
-</pre></div>
-</div>
-<p>With ‘mypackage’ adjusted to the specific project.</p>
 </div>
 <div class="section" id="more-details">
 <h2>More Details<a class="headerlink" href="#more-details" title="Permalink to this headline">¶</a></h2>

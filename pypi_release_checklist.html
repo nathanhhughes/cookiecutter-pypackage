@@ -213,7 +213,8 @@ git commit -m <span class="s2">&quot;Changelog for upcoming release 0.1.1.&quot;
 <li><p>Check your long_description locally:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install readme_renderer
-python setup.py check -r -s
+<span class="c1"># Replace PROBLEM.rst with the name of the file you are having trouble with</span>
+python -m readme_renderer PROBLEM.rst &gt;/dev/null
 </pre></div>
 </div>
 </div></blockquote>
