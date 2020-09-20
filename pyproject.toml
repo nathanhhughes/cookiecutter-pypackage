@@ -1,13 +1,12 @@
 [tool]
 [tool.poetry]
 name = "cookiecutter-pypackage"
-version = "0.2.0"
+version = "0.0.1"
 description = "Cookiecutter template for a Python package"
 license = "BSD-3-Clause"
-authors = ["Sam Briggs <briggySmalls90@gmail.com>"]
+authors = ["Nathan Hughes <nathan.h.hughes@gmail.com"]
 readme = "README.rst"
-repository = "https://github.com/briggySmalls/cookiecutter-pypackage"
-documentation = "https://briggysmalls.github.io/cookiecutter-pypackage"
+repository = "https://github.com/nathanhhughes/cookiecutter-pypackage"
 keywords = ['cookiecutter', 'template', 'package']
 
 [tool.poetry.dependencies]

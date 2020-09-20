@@ -1,0 +1,4 @@
+# https://github.com/psf/black/blob/master/docs/compatible_configs.md#formats-1
+[flake8]
+max-line-length = 88
+extend-ignore = E203
