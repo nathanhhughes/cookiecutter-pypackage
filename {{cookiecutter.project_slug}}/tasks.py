@@ -46,9 +46,9 @@ def format(c, check=False):
     Format code
     """
     python_dirs_string = " ".join(PYTHON_DIRS)
-    # Run yapf
-    yapf_options = '--recursive {}'.format('--diff' if check else '--in-place')
-    _run(c, "yapf {} {}".format(yapf_options, python_dirs_string))
+    # Run black
+    black_options = '--diff' if check else ''
+    _run(c, "black {} {}".format(black_options, python_dirs_string))
     # Run isort
     isort_options = '--recursive {}'.format(
         '--check-only --diff' if check else '')
@@ -56,26 +56,11 @@ def format(c, check=False):
 
 
 @task
-def lint_flake8(c):
-    """
-    Lint code with flake8
-    """
-    _run(c, "flake8 {}".format(" ".join(PYTHON_DIRS)))
-
-
-@task
-def lint_pylint(c):
-    """
-    Lint code with pylint
-    """
-    _run(c, "pylint {}".format(" ".join(PYTHON_DIRS)))
-
-
-@task(lint_flake8, lint_pylint)
 def lint(c):
     """
     Run all linting
     """
+    _run(c, "flake8 {}".format(" ".join(PYTHON_DIRS)))
 
 
 @task
@@ -86,20 +71,16 @@ def test(c):
     _run(c, "pytest")
 
 
-@task(help={'publish': "Publish the result via coveralls"})
+@task
 def coverage(c, publish=False):
     """
     Create coverage report
     """
     _run(c, "coverage run --source {} -m pytest".format(SOURCE_DIR))
     _run(c, "coverage report")
-    if publish:
-        # Publish the results via coveralls
-        _run(c, "coveralls")
-    else:
-        # Build a local report
-        _run(c, "coverage html")
-        webbrowser.open(COVERAGE_REPORT.as_uri())
+    # Build a local report
+    _run(c, "coverage html")
+    webbrowser.open(COVERAGE_REPORT.as_uri())
 
 
 @task(help={'launch': "Launch documentation in the web browser"})
