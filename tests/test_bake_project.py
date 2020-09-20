@@ -202,59 +202,6 @@ def test_bake_not_open_source(cookies):
         assert 'license' not in result.project.join(_DEPENDENCY_FILE).read()
 
 
-def test_not_using_pytest(cookies):
-    with bake_in_temp_dir(cookies, extra_context={'use_pytest': 'n'}) as result:
-        assert result.project.isdir()
-        # Test pyproject doesn't install pytest
-        dep_file_path = result.project.join(_DEPENDENCY_FILE)
-        lines = dep_file_path.readlines()
-        assert "pytest = \"*\"\n" not in lines
-        # Test contents of test file
-        test_file_path = result.project.join('tests/test_python_boilerplate.py')
-        lines = test_file_path.readlines()
-        assert "import unittest" in ''.join(lines)
-        assert "import pytest" not in ''.join(lines)
-
-
-def test_using_google_docstrings(cookies):
-    with bake_in_temp_dir(cookies) as result:
-        assert result.project.isdir()
-        # Test docs include sphinx extension
-        docs_conf_file_path = result.project.join('docs/conf.py')
-        lines = docs_conf_file_path.readlines()
-        assert "sphinx.ext.napoleon" in ''.join(lines)
-
-
-def test_not_using_google_docstrings(cookies):
-    with bake_in_temp_dir(cookies, extra_context={'use_google_docstrings': 'n'}) as result:
-        assert result.project.isdir()
-        # Test docs do not include sphinx extension
-        docs_conf_file_path = result.project.join('docs/conf.py')
-        lines = docs_conf_file_path.readlines()
-        assert "sphinx.ext.napoleon" not in ''.join(lines)
-
-
-# def test_project_with_hyphen_in_module_name(cookies):
-#     result = cookies.bake(
-#         extra_context={'project_name': 'something-with-a-dash'}
-#     )
-#     assert result.project is not None
-#     project_path = str(result.project)
-#
-#     # when:
-#     travis_setup_cmd = ('python travis_pypi_setup.py'
-#                         ' --repo audreyr/cookiecutter-pypackage'
-#                         ' --password invalidpass')
-#     run_inside_dir(travis_setup_cmd, project_path)
-#
-#     # then:
-#     result_travis_config = yaml.load(
-#         open(os.path.join(project_path, ".travis.yml"))
-#     )
-#     assert "secure" in result_travis_config["deploy"]["password"],\
-#         "missing password config in .travis.yml"
-
-
 @pytest.mark.parametrize("args", [
     ({'command_line_interface': "No command-line interface"}, False),
     ({'command_line_interface': 'click'}, True),
