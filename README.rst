@@ -2,21 +2,12 @@
 Cookiecutter PyPackage
 ======================
 
-.. image:: https://img.shields.io/travis/briggySmalls/cookiecutter-pypackage.svg
-    :target: https://travis-ci.org/briggySmalls/cookiecutter-pypackage
-    :alt: Linux build status on Travis CI
+Cookiecutter_ template for a Python package, forked from `briggySmalls/cookiecutter-pypackage`_.
 
-.. image:: https://ci.appveyor.com/api/projects/status/github/briggySmalls/cookiecutter-pypackage?branch=master&svg=true
-    :target: https://ci.appveyor.com/project/briggySmalls/cookiecutter-pypackage/branch/master
-    :alt: Windows build status on Appveyor
-
-Cookiecutter_ template for a Python package, forked from `audreyr/cookiecutter-pypackage`_.
-
-* GitHub repo: https://github.com/briggySmalls/cookiecutter-pypackage/
-* Documentation: https://briggysmalls.github.io/cookiecutter-pypackage/
+* GitHub repo: https://github.com/nathanhhughes/cookiecutter-pypackage/
 * Free software: BSD license
 
-.. _audreyr/cookiecutter-pypackage: https://github.com/audreyr/cookiecutter-pypackage
+.. _briggySmalls/cookiecutter-pypackage: https://github.com/briggySmalls/cookiecutter-pypackage
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 
 Features
